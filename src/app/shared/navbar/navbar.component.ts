@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -6,13 +6,18 @@ import { Component, HostListener } from '@angular/core';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
-export class NavbarComponent {
-  isScrolled = false;
+export class NavbarComponent implements OnInit {
   mobileOpen = false;
+  isMobile = false;
 
-  @HostListener('window:scroll')
-  onScroll() {
-    this.isScrolled = window.scrollY > 8;
+  ngOnInit() {
+    this.checkMobile();
+  }
+
+  @HostListener('window:resize')
+  checkMobile() {
+    this.isMobile = window.innerWidth < 980;
+    if (!this.isMobile) this.mobileOpen = false;
   }
 
   toggleMenu() {

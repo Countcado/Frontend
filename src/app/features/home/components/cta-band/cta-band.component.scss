@@ -1,0 +1,73 @@
+.cta-band {
+  background: #f4f3ee;
+  padding: 0 28px 96px;
+}
+
+.cta-band__card {
+  max-width: 1180px;
+  margin: 0 auto;
+  background: radial-gradient(120% 130% at 90% 10%, #41571f 0%, #2f4318 50%, #243809 100%);
+  border-radius: 30px;
+  padding: 62px 48px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.cta-band__avo1 {
+  position: absolute;
+  top: -30px;
+  left: 8%;
+  width: 48px;
+  height: 60px;
+  background: #8cda58;
+  opacity: 0.45;
+  border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%;
+  animation: ccFloat 8s ease-in-out infinite;
+}
+
+.cta-band__avo2 {
+  position: absolute;
+  bottom: -20px;
+  right: 10%;
+  width: 60px;
+  height: 74px;
+  background: #7b904b;
+  opacity: 0.5;
+  border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%;
+  animation: ccFloatB 10s ease-in-out infinite;
+}
+
+.cta-band__h2 {
+  font-family: 'Baloo 2', cursive;
+  font-weight: 800;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  line-height: 1.05;
+  letter-spacing: -1px;
+  color: #f4f3ee;
+  margin: 0 0 16px;
+  position: relative;
+}
+
+.cta-band__lead {
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: #cfdab2;
+  max-width: 520px;
+  margin: 0 auto 32px;
+  position: relative;
+}
+
+.cta-band__btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #c0673a;
+  color: #f4f3ee;
+  font-weight: 700;
+  font-size: 17px;
+  padding: 17px 38px;
+  border-radius: 46px;
+  box-shadow: 0 16px 34px -12px rgba(192, 103, 58, 0.8);
+}

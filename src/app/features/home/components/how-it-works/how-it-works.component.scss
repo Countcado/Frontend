@@ -1,0 +1,98 @@
+.how {
+  background: #edefe3;
+  padding: 96px 28px;
+  scroll-margin-top: 80px;
+}
+
+.how__inner {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.how__header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 58px;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #7b904b;
+  font-weight: 700;
+  font-size: 13.5px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  justify-content: center;
+}
+
+.section-tag__line {
+  width: 26px;
+  height: 2px;
+  background: #7b904b;
+  display: inline-block;
+}
+
+.section-h2 {
+  font-family: 'Baloo 2', cursive;
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  line-height: 1.05;
+  letter-spacing: -1px;
+  color: #273b09;
+  margin: 0;
+}
+
+.how__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+}
+
+.how-step {
+  position: relative;
+  background: #fff;
+  border-radius: 22px;
+  padding: 32px 28px;
+  border: 1px solid #e1e3d5;
+}
+
+.how-step__num {
+  font-family: 'Baloo 2', cursive;
+  font-weight: 800;
+  font-size: 54px;
+  color: #e3e7d2;
+  line-height: 1;
+  position: absolute;
+  top: 18px;
+  right: 24px;
+}
+
+.how-step__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #273b09;
+  color: #8cda58;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+
+.how-step__h3 {
+  font-family: 'Baloo 2', cursive;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #273b09;
+  margin: 0 0 9px;
+}
+
+.how-step__p {
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: #5a6733;
+  margin: 0;
+}

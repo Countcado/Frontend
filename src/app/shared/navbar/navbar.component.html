@@ -1,44 +1,42 @@
-<header [class.scrolled]="isScrolled">
-  <div class="wrap nav">
-    <a href="#" class="brand" aria-label="CountCado inicio">
-      <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-        <path d="M20 3c-5 0-9 5-9 13s4 21 9 21 9-13 9-21S25 3 20 3z" fill="#7ba428"/>
-        <path d="M20 3c-5 0-9 5-9 13s4 21 9 21V3z" fill="#a7c957"/>
-        <circle cx="20" cy="24" r="6.5" fill="#a96b3c"/>
-        <circle cx="20" cy="24" r="6.5" fill="url(#nav-g)" fill-opacity=".25"/>
-        <defs>
-          <radialGradient id="nav-g" cx=".4" cy=".35" r=".7">
-            <stop stop-color="#fff"/>
-            <stop offset="1" stop-color="#fff" stop-opacity="0"/>
-          </radialGradient>
-        </defs>
-      </svg>
-      Count<b>Cado</b>
+<header>
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">
+      <span class="nav-logo__avo">
+        <span class="nav-logo__avo-outer"></span>
+        <span class="nav-logo__avo-inner"></span>
+        <span class="nav-logo__avo-pit"></span>
+      </span>
+      <span class="nav-logo__name">Countcado</span>
     </a>
 
-    <nav class="nav-links" aria-label="Principal">
-      <a href="#beneficios">Beneficios</a>
-      <a href="#como">Cómo funciona</a>
-      <a href="#recetas">Recetas</a>
-      <a href="#precios">Precios</a>
+    <nav *ngIf="!isMobile" class="nav-links">
+      <a href="#beneficios" class="cc-nav-link nav-link">Beneficios</a>
+      <a href="#como" class="cc-nav-link nav-link">Cómo funciona</a>
+      <a href="#recetas" class="cc-nav-link nav-link">Recetas</a>
+      <a href="#ahorro" class="cc-nav-link nav-link">Ahorro</a>
+      <a href="#precios" class="cc-nav-link nav-link">Precios</a>
+      <a href="#faq" class="cc-nav-link nav-link">FAQ</a>
     </nav>
 
-    <div class="nav-cta">
-      <a href="#" class="login">Entrar</a>
-      <a href="#precios" class="btn btn-primary">Crear cuenta</a>
-      <button class="burger" (click)="toggleMenu()" [attr.aria-expanded]="mobileOpen" aria-label="Abrir menú">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-          <path d="M4 7h16M4 12h16M4 17h16"/>
-        </svg>
-      </button>
+    <div *ngIf="!isMobile" class="nav-actions">
+      <a href="#" class="cc-nav-link nav-login">Iniciar sesión</a>
+      <a href="#precios" class="cc-btn-orange nav-cta">Empezar</a>
     </div>
+
+    <button *ngIf="isMobile" (click)="toggleMenu()" aria-label="Menú" class="nav-burger">
+      <span class="nav-burger__bar"></span>
+      <span class="nav-burger__bar"></span>
+      <span class="nav-burger__bar"></span>
+    </button>
   </div>
 
-  <div class="mobile-menu" [class.open]="mobileOpen">
-    <a href="#beneficios" (click)="closeMenu()">Beneficios</a>
-    <a href="#como" (click)="closeMenu()">Cómo funciona</a>
-    <a href="#recetas" (click)="closeMenu()">Recetas</a>
-    <a href="#precios" (click)="closeMenu()">Precios</a>
-    <a href="#precios" class="btn btn-primary" (click)="closeMenu()">Crear cuenta</a>
+  <div *ngIf="isMobile && mobileOpen" class="nav-mobile">
+    <a (click)="closeMenu()" href="#beneficios" class="nav-mobile__link">Beneficios</a>
+    <a (click)="closeMenu()" href="#como" class="nav-mobile__link">Cómo funciona</a>
+    <a (click)="closeMenu()" href="#recetas" class="nav-mobile__link">Recetas</a>
+    <a (click)="closeMenu()" href="#ahorro" class="nav-mobile__link">Ahorro</a>
+    <a (click)="closeMenu()" href="#precios" class="nav-mobile__link">Precios</a>
+    <a (click)="closeMenu()" href="#faq" class="nav-mobile__link">FAQ</a>
+    <a (click)="closeMenu()" href="#precios" class="nav-mobile__cta">Empezar gratis</a>
   </div>
 </header>

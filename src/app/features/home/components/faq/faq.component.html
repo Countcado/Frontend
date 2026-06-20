@@ -1,0 +1,24 @@
+<section id="faq" class="faq">
+  <div class="faq__inner">
+
+    <div class="faq__header" appReveal>
+      <div class="section-tag">
+        <span class="section-tag__line"></span>Preguntas frecuentes<span class="section-tag__line"></span>
+      </div>
+      <h2 class="section-h2">¿Tienes dudas? Las resolvemos</h2>
+    </div>
+
+    <div class="faq__list">
+      <div *ngFor="let faq of faqs; let i = index" appReveal
+        class="faq-item"
+        [class.open]="faq.open">
+        <button (click)="toggle(i)" class="faq-item__btn">
+          <span class="faq-item__q">{{ faq.q }}</span>
+          <span class="faq-item__icon">{{ faq.open ? '–' : '+' }}</span>
+        </button>
+        <div *ngIf="faq.open" class="faq-item__a">{{ faq.a }}</div>
+      </div>
+    </div>
+
+  </div>
+</section>

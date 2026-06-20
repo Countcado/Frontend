@@ -1,0 +1,41 @@
+<section id="ahorro" class="calc">
+  <div class="calc__card" appReveal>
+    <span class="calc__avo1"></span>
+    <span class="calc__avo2"></span>
+
+    <div class="calc__grid">
+      <!-- Left: slider -->
+      <div>
+        <div class="section-tag">
+          <span class="section-tag__line"></span>Calculadora de ahorro
+        </div>
+        <h2 class="calc__h2">Mira cuánto puedes ahorrar</h2>
+        <p class="calc__lead">Arrastra para indicar cuánto gastas al mes comiendo fuera o en comida preparada. Cocinar con Countcado sale, de media, un 60% más barato.</p>
+
+        <div class="calc__slider-header">
+          <span class="calc__slider-label">Gasto mensual comiendo fuera</span>
+          <span class="calc__slider-val">{{ spendLabel }}</span>
+        </div>
+        <input type="range" class="cc-range" min="40" max="400" step="10" [value]="spend" (input)="onRangeChange($event)" />
+        <div class="calc__slider-range">
+          <span>40 €</span><span>400 €</span>
+        </div>
+      </div>
+
+      <!-- Right: results -->
+      <div class="calc__results">
+        <div class="calc__results-label">Cocinando con Countcado</div>
+        <div class="calc__results-cook">
+          {{ cookLabel }} <span class="calc__results-cook-unit">/mes aprox.</span>
+        </div>
+        <div class="calc__bar-track">
+          <div class="calc__bar-fill" [style.width]="barPct + '%'"></div>
+        </div>
+        <div class="calc__bar-pct">{{ barPct }}% menos que comiendo fuera</div>
+        <div class="calc__divider"></div>
+        <div class="calc__saving-label">Ahorro estimado al año</div>
+        <div class="calc__saving-val">{{ savingYearLabel }}</div>
+      </div>
+    </div>
+  </div>
+</section>

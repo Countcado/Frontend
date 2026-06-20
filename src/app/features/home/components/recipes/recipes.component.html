@@ -1,0 +1,47 @@
+<section id="recetas" class="recipes">
+  <div class="recipes__inner">
+
+    <div class="recipes__header" appReveal>
+      <div class="recipes__header-left">
+        <div class="section-tag">
+          <span class="section-tag__line"></span>Ejemplos de recetas
+        </div>
+        <h2 class="section-h2">Sano, rico y por menos de 2,50 €</h2>
+      </div>
+      <a href="#" class="cc-link-arrow recipes__see-all">Ver todas las recetas →</a>
+    </div>
+
+    <!-- Filter buttons -->
+    <div class="recipes__filters">
+      <button *ngFor="let cat of categories" (click)="setFilter(cat)"
+        class="filter-btn"
+        [class.active]="cat === activeFilter">
+        {{ cat }}
+      </button>
+    </div>
+
+    <!-- Recipe grid -->
+    <div class="recipes__grid">
+      <div *ngFor="let r of filteredRecipes" class="recipe-card cc-recipe-card" appReveal>
+        <div class="recipe-card__photo">
+          <span class="recipe-card__photo-label">foto · {{ r.name }}</span>
+          <span class="recipe-card__tag" [style.background]="r.tone">{{ r.tag }}</span>
+        </div>
+        <div class="recipe-card__body">
+          <h3 class="recipe-card__h3">{{ r.name }}</h3>
+          <p class="recipe-card__desc">{{ r.desc }}</p>
+          <div class="recipe-card__footer">
+            <span class="recipe-card__time">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              {{ r.time }}
+            </span>
+            <span class="recipe-card__cost">
+              {{ r.cost }}<span class="recipe-card__cost-unit"> /ración</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
